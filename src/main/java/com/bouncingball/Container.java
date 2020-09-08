@@ -8,35 +8,27 @@ public class Container extends Rectangle {
         this.ball = ball;
     }
 
-    public boolean moveBallLeft() {
-        if(!this.covers(this.ball.left())) {
+    public boolean moveBall(Move move) {
+        if(!this.covers(move.nextPosition(this.ball))) {
             return false;
         }
-        this.ball.moveLeft();
+        move.moveBall(this.ball);
         return true;
+    }
+
+    public boolean moveBallLeft() {
+        return moveBall(Move.LEFT);
     }
 
     public boolean moveBallRight() {
-        if(!this.covers(this.ball.right())) {
-            return false;
-        }
-        this.ball.moveRight();
-        return true;
+        return moveBall(Move.RIGHT);
     }
 
     public boolean moveBallForward() {
-        if(!this.covers(this.ball.forward())) {
-            return false;
-        }
-        this.ball.moveForward();
-        return true;
+        return moveBall(Move.FORWARD);
     }
 
     public boolean moveBallBackWard() {
-        if(!this.covers(this.ball.back())) {
-            return false;
-        }
-        this.ball.moveBackward();
-        return true;
+        return moveBall(Move.BACK);
     }
 }
