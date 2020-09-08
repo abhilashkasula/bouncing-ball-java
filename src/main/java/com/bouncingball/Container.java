@@ -3,8 +3,8 @@ package com.bouncingball;
 public class Container extends Rectangle {
     private final Ball ball;
 
-    public Container(Point diogonalPoint1, Point diogonalPoint2, Ball ball) {
-        super(diogonalPoint1, diogonalPoint2);
+    public Container(Point diagonalPoint1, Point diagonalPoint2, Ball ball) {
+        super(diagonalPoint1, diagonalPoint2);
         this.ball = ball;
     }
 
