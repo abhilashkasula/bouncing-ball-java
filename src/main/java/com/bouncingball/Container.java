@@ -8,7 +8,7 @@ public class Container extends Rectangle {
         this.ball = ball;
     }
 
-    public boolean moveBall(Move move) {
+    private boolean moveBall(Move move) {
         if(!this.covers(move.nextPosition(this.ball))) {
             return false;
         }
