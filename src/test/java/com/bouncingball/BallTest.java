@@ -5,6 +5,29 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BallTest {
+    @Test
+    void left() {
+        final Ball ball = new Ball(new Point(2, 2), 1, 1);
+        assertEquals(new Point(1, 2), ball.left());
+    }
+
+    @Test
+    void right() {
+        final Ball ball = new Ball(new Point(2, 2), 1, 1);
+        assertEquals(new Point(3, 2), ball.right());
+    }
+
+    @Test
+    void forward() {
+        final Ball ball = new Ball(new Point(2, 2), 1, 1);
+        assertEquals(new Point(2, 3), ball.forward());
+    }
+
+    @Test
+    void back() {
+        final Ball ball = new Ball(new Point(2, 2), 1, 1);
+        assertEquals(new Point(2, 1), ball.back());
+    }
 
     @Test
     void moveForward() {
