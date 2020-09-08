@@ -23,4 +23,12 @@ public class Container extends Rectangle {
         this.ball.moveRight();
         return true;
     }
+
+    public boolean moveBallForward() {
+        if(!this.covers(this.ball.forward())) {
+            return false;
+        }
+        this.ball.moveForward();
+        return true;
+    }
 }
