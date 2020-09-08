@@ -1,7 +1,5 @@
 package com.bouncingball;
 
-import java.util.Objects;
-
 public class Point {
     public final double x;
     public final double y;
