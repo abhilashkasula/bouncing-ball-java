@@ -17,4 +17,16 @@ class ContainerTest {
         final Container container = new Container(new Point(3, 5), new Point(6, 0), new Ball(new Point(3, 5), 1, 1));
         assertFalse(container.moveBallLeft());
     }
+
+    @Test
+    void moveBallRightShouldGiveTrueIfBallMovedWithInContainer() {
+        final Container container = new Container(new Point(3, 5), new Point(6, 0), new Ball(new Point(3, 5), 1, 1));
+        assertTrue(container.moveBallRight());
+    }
+
+    @Test
+    void moveBallRightShouldGiveFalseIfBallReachedEndOfContainer() {
+        final Container container = new Container(new Point(3, 5), new Point(6, 0), new Ball(new Point(6, 2), 1, 1));
+        assertFalse(container.moveBallRight());
+    }
 }
