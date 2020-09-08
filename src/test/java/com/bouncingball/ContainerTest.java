@@ -5,6 +5,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ContainerTest {
+    @Test
+    void coversShouldGiveTrueIfGivenPointIsWithInContainer() {
+        final Container container = new Container(new Point(3, 5), new Point(6, 0), new Ball(new Point(4, 4), 1, 1));
+        assertTrue(container.covers(new Point(4, 4)));
+    }
+
+    @Test
+    void coversShouldGiveFalseIfGivenPointIsOutOfContainer() {
+        final Container container = new Container(new Point(3, 5), new Point(6, 0), new Ball(new Point(4, 4), 1, 1));
+        assertFalse(container.covers(new Point(3, 6)));
+    }
 
     @Test
     void moveBallLeftShouldGiveTrueIfBallMovedWithInContainer() {
