@@ -1,39 +1,36 @@
 package com.bouncingball;
 
 public class Ball {
-    private double x;
-    private double y;
+    private Point point;
     private final double xDelta;
     private final double yDelta;
 
-    public Ball(double x, double y, double xDelta, double yDelta) {
-        this.x = x;
-        this.y = y;
+    public Ball(Point point, double xDelta, double yDelta) {
+        this.point = point;
         this.xDelta = xDelta;
         this.yDelta = yDelta;
     }
 
-    public double moveForward() {
-        return this.y += this.yDelta;
+    public Point moveForward() {
+        return this.point = new Point(this.point.x, this.point.y + this.yDelta);
     }
 
-    public double moveBackward() {
-        return this.y -= this.yDelta;
+    public Point moveBackward() {
+        return this.point = new Point(this.point.x, this.point.y - this.yDelta);
     }
 
-    public double moveLeft() {
-        return this.x -= this.xDelta;
+    public Point moveLeft() {
+        return this.point = new Point(this.point.x - this.xDelta, this.point.y);
     }
 
-    public double moveRight() {
-        return this.x += this.xDelta;
+    public Point moveRight() {
+        return this.point = new Point(this.point.x + this.xDelta, this.point.y);
     }
 
     @Override
     public String toString() {
         return "Ball{" +
-                "x=" + x +
-                ", y=" + y +
+                "point=" + point +
                 ", xDelta=" + xDelta +
                 ", yDelta=" + yDelta +
                 '}';
